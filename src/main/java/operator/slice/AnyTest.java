@@ -2,15 +2,15 @@ package operator.slice;
 
 import io.reactivex.Flowable;
 
-public class ExistsTest {
+public class AnyTest {
     public static void main(String[] args) {
 
         Flowable.range(1, 9)
-                .contains(5)
+                .any(i -> i==5)
                 .subscribe(System.out::println);
 
         Flowable.range(1, 9)
-                .contains(10)
+                .any(i -> i==10)
                 .subscribe(System.out::println);
 
     }
