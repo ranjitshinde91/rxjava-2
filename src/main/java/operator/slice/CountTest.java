@@ -1,16 +1,16 @@
-package type;
+package operator.slice;
 
+import io.reactivex.Flowable;
 
-import io.reactivex.Single;
-
-public class SingleTest {
-
+public class CountTest {
     public static void main(String[] args) {
-        Single.just(1)
+
+        Flowable.range(1, 9)
+                .count()
                 .subscribe(System.out::println,
                         (t) -> System.out.println(t));
-
-        Single.error(new RuntimeException("error"))
+        Flowable.empty()
+                .count()
                 .subscribe(System.out::println,
                         (t) -> System.out.println(t));
     }

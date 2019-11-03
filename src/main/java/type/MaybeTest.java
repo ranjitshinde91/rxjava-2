@@ -38,5 +38,8 @@ public class MaybeTest {
         Maybe.empty()
                 .subscribe(maybeObserver);
 
+        Maybe.error(new RuntimeException("error"))
+                .subscribe(maybeObserver);
+
     }
 }
