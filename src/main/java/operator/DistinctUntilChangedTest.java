@@ -2,7 +2,6 @@ package operator;
 
 import customer.Tweet;
 import io.reactivex.Flowable;
-
 public class DistinctUntilChangedTest {
     public static void main(String[] args) {
 

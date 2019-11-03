@@ -6,7 +6,7 @@ import io.reactivex.schedulers.Schedulers;
 
 import static logger.Logger.log;
 
-public class SubscribeOnTest {
+public class ObserveOnTest {
 
     public static void main(String[] args) {
 
@@ -17,7 +17,7 @@ public class SubscribeOnTest {
                     log(it.toString());
                     return it;
                 })
-                .subscribeOn(Schedulers.computation())
+                .observeOn(Schedulers.computation())
                 .subscribe((it)->log(it.toString()));
 
         log("complete");
