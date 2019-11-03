@@ -28,7 +28,7 @@ public class SwitchOnNextTest {
                         .delay(random.nextInt(10), SECONDS));
 
         Flowable.switchOnNext(source)
-             .subscribe(System.out::println);
+          .subscribe(System.out::println);
 
         try {
             Thread.sleep(20000);

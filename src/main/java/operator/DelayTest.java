@@ -12,11 +12,11 @@ public class DelayTest {
 
         Flowable.just(1, 2, 3, 4)
                 .delay(1, TimeUnit.SECONDS)
-                .subscribe((i)->System.out.println("emitting  "+i+" at "+ Instant.now()));
+                .subscribe((i)->System.out.println("emitting1  "+i+" at "+ Instant.now()));
 
         Flowable.just("Lorem", "ipsum", "dolor", "sit", "amet", "elit", "a", "ab")
                 .delay(i -> timer(i.length(), TimeUnit.SECONDS))
-                .subscribe((i)->System.out.println("emitting  "+i+" at "+ Instant.now()));
+                .subscribe((i)->System.out.println("emitting2  "+i+" at "+ Instant.now()));
 
         try {
             Thread.sleep(5000);
