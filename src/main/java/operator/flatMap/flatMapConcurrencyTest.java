@@ -9,7 +9,7 @@ public class flatMapConcurrencyTest {
     public static void main(String[] args) {
 
         Flowable.just("SUNDAY", "MONDAY")
-                .flatMap(Order::loadOrdersFor, 1)
+                .flatMap(Order::loadOrdersFor, 2)
                 .subscribe((i)-> System.out.println(i +" on Thread "+Thread.currentThread().getName()));
 
         try {
