@@ -1,4 +1,4 @@
-package operator;
+package operator.time;
 
 import io.reactivex.Flowable;
 

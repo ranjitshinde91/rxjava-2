@@ -4,9 +4,6 @@ package concurrency;
 import io.reactivex.Flowable;
 import io.reactivex.schedulers.Schedulers;
 
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
 import static logger.Logger.log;
 
 public class SubscribeOnConcurrencyTest {
@@ -16,8 +13,9 @@ public class SubscribeOnConcurrencyTest {
         log("Starting");
 
         Flowable.just("Bread", "Butter", "Milk", "Tomato", "Cheese")
-                .doOnNext((it)-> log(it))
+                .doOnNext((it) -> log(it))
                 .flatMap(prod -> purchase(prod))
+                .doOnNext((it) -> log(it))
                 .subscribe(it -> log(it));
 
         log("complete");
@@ -31,7 +29,7 @@ public class SubscribeOnConcurrencyTest {
 
     private static Flowable<String> purchase(String prod) {
         return Flowable.just(prod)
-                .doOnNext((it)->log("purchasing : " + it))
+                .doOnNext((it) -> log("purchasing : " + it))
                 .subscribeOn(Schedulers.io());
     }
 }
